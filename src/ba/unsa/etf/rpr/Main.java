@@ -7,7 +7,7 @@ public class Main {
     private static Korpa korpa = new Korpa();
     private static Supermarket supermarket = new Supermarket();
 
-    private static void unosArtikalaUMarket(){
+    private static void unosArtikalaUMarket(){ // obrisao sve dodaj, mozda lapsus??
         supermarket.dodajArtikl(new Artikl("Biciklo", 1000, "1"));
         supermarket.dodajArtikl(new Artikl("Biciklo", 1000, "2"));
         supermarket.dodajArtikl(new Artikl("Biciklo", 1000, "3"));
@@ -62,6 +62,7 @@ public class Main {
             else if(opcija == 1){
                 System.out.println("Dodavanje artikla u korpu\nArtikli u marketu su: ");
                 ispisArtikala(supermarket.getArtikli());
+                //System.out.println(supermarket.getVel());
                 System.out.println("Unesite kod artikla (unesite malo slovo \"c\" za odustajanje): ");
                 String kod = scanner.nextLine();
                 kod = scanner.nextLine();
