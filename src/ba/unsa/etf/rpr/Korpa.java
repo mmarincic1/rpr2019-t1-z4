@@ -13,10 +13,11 @@ public class Korpa {
     public Artikl[] getArtikli() {
         return artikli;
     }
+
     public Artikl izbaciArtiklSaKodom(String kod){
         for(int i = 0; i < vel; i++){
-            int pom = Integer.parseInt(artikli[i].getKod());
-            if(pom == Integer.parseInt(kod)){
+            //int pom = Integer.parseInt(artikli[i].getKod());
+            if(kod.equals(artikli[i].getKod())){
                 Artikl vrati = artikli[i];
                 artikli[i] = null;
                 System.arraycopy(artikli, i+1, artikli , i, vel-i);
@@ -32,5 +33,8 @@ public class Korpa {
             ukupno = ukupno + artikli[i].getCijena();
         }
         return ukupno;
+    }
+    public int getVel(){
+        return vel;
     }
 }
