@@ -48,8 +48,18 @@ class KorpaTest {
     @Test
     void dajUkupnuCijenuArtikala() {
         Korpa korpa = new Korpa();
+        for(int i = 0; i < 50; i++) {
+            korpa.dodajArtikl(new Artikl("Bajk", 1000, String.valueOf(i)));
+        }
+        assertEquals(50000, korpa.dajUkupnuCijenuArtikala());
+    }
+    @Test
+    void izbaciArtiklSaKodomNull(){
+        Korpa korpa = new Korpa();
         for(int i = 0; i < 49; i++) {
             korpa.dodajArtikl(new Artikl("Bajk", 1000, String.valueOf(i)));
         }
+        assertEquals(korpa.izbaciArtiklSaKodom("1000"), null);
     }
+
 }
